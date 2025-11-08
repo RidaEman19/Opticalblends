@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpticBlend | Design Your Eyewear</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body { font-family: Arial, sans-serif; }
+
+      .para {
+        text-align: center;
+        background-color: #e6d8c3;
+        font-weight: bold;
+        margin: 0;
+        padding: 8px 0;
+      }
+
+      .btn1, .signin {
+        background-color: #e6d8c3;
+        color: #492a0e;
+        border-radius: 10px;
+        border: 2px solid #492a0e;
+      }
+
+      .btn1:hover, .signin:hover {
+        background-color: #d4c2a8;
+      }
+
+      .signin {
+        margin-left: 10px;
+        text-decoration: none;
+      }
+
+      .form-control {
+        background-color: #e6d8c3;
+        border: 2px solid #492a0e;
+      }
+
+      input:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #492a0e;
+      }
+
+      .card { transition: transform 0.3s, box-shadow 0.3s; }
+      .card:hover { transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); }
+
+      .card-img-top { height: 200px; object-fit: cover; }
+
+      footer { background-color: #e6d8c3; color: #492a0e; }
+      footer a { text-decoration: none; }
+      footer a:hover { text-decoration: underline; }
+
+      .b2 {
+        background-image: url(https://i.pinimg.com/1200x/b3/8a/1b/b38a1b690f9e01534545c213b43edb56.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      h2 { color: #ffcc00; font-size: 40px; }
+      p { color: #49240e; font-weight: bold; }
+
+      .coun1 {
+        background-image: url(https://i.pinimg.com/736x/09/a4/60/09a46056636a6358ab0bdcd1455f054d.jpg);
+        background-position: center;
+        background-size: cover;
+        opacity: 0.9;
+      }
+
+      .icon4 { color: #3a1500; }
+      .user { color: #3a1500; }
+
+      .testimonial-card .card-up {
+        height: 120px;
+        overflow: hidden;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+      }
+       video {
+  filter: brightness(70%);
+}
+
+.position-absolute {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -40%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Button hover effect */
+a.btn:hover {
+  background: linear-gradient(135deg, #5c3317, #bfa77e);
+  transform: scale(1.05);
+  color: #fff;
+}
+      
+
+      .testimonial-card .avatar {
+        width: 110px;
+        margin-top: -60px;
+        overflow: hidden;
+        border: 3px solid #fff;
+        border-radius: 50%;
+      }
+
+      video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      .c1{
+        background-color:#e6d8c3 ;
+      }
+     .image-container {
+  position: relative;
+  width: 100%;
+  height: 250px; /* adjust to fit your card design */
+  overflow: hidden;
+}
+
+.image-container img {
+  position: absolute; /* stack images */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* scale images perfectly */
+  transition: opacity 0.4s ease-in-out;
+}
+
+.main-img {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hover-img {
+  opacity: 0;
+  z-index: 2; /* hover image on top */
+}
+
+.image-container:hover .hover-img {
+  opacity: 1;
+}
+
+.image-container:hover .main-img {
+  opacity: 0;
+}
+
+
+      @media (max-width: 768px) {
+        .card h1 { font-size: 1.5rem; }
+        .card h4 { font-size: 1rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <p class="para">Design Your Eyewear With OpticBlend</p>
+
+    <!-- Navbar -->
+    <header>
+     <nav class="navbar navbar-expand-lg" style="background-color: #e6d8c3;">
+  <div class="container-fluid">
+    <!-- Logo + Brand -->
+    <a class="navbar-brand d-flex align-items-center" href="header.html">
+      <img
+        src="opticblend-removebg-preview.png"
+        alt="OpticBlend Logo"
+        height="70"
+        width="70"
+        class="me-2 img-fluid"
+      />
+      <span class="fw-bold fs-4" style="color:#3a1506;">OpticBlend</span>
+    </a>
+
+    <!-- Toggler (for mobile) -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" style="color:#3a1506;" href="header.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" style="color:#3a1506;" href="index.html">Eyeglasses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold" style="color:#3a1506;" href="workgalllery.html">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold" style="color:#3a1506;" href="aboutus.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold" style="color:#3a1506;" href="eproject.html">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold" style="color:#3a1506;" href="facts.html">Facts</a>
+        </li>
+      </ul>
+
+      <!-- Sign In Button -->
+      <a href="login.html" class="btn btn-sm fw-bold" style="background-color:#3a1506; color:#fff;">
+        Sign In
+      </a>
+    </div>
+  </div>
+</nav>
+    </header>
+
+    <!-- Video Section -->
+        <div class="container-fluid p-0 position-relative">
+  <video autoplay muted loop playsinline class="w-100" style="object-fit: cover; height: 100vh;">
+    <source src="main1.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Text Overlay -->
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-light" 
+       style="background: rgba(40, 25, 15, 0.5); padding: 50px; border-radius: 25px;">
+    <h1 class="fw-bold display-4" style="letter-spacing: 2px; color: #f5e6d0;">
+      See the World in Style
+    </h1>
+    <p class="lead mt-3 mb-4" style="font-size: 1.2rem; color: #f5e6d0;">
+      Discover our latest collection of premium eyewear designed for elegance and comfort.
+    </p>
+    <a href="index.html" 
+       class="btn btn-lg fw-semibold"
+       style="background: linear-gradient(135deg, #7a4b2a, #cbb89d); border: none; color: #fff; border-radius: 30px; padding: 12px 35px; transition: 0.3s;">
+      Explore Glasses
+    </a>
+  </div>
+</div>
+
+    <!-- Products -->
+    <main class="container py-5">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold" style="color:#4b2e15;">Our Latest Technology</h2>
+      </div>
+    
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col"> <div class="card h-100 text-center m-2" style="background-color:#57301a;">
+            <div class="image-container position-relative">
+              <img src="https://i.pinimg.com/1200x/25/d4/2f/25d42f0510398862dc4590343a3e2879.jpg"
+                   class="card-img-top img-fluid main-img"
+                   alt="Product 1" />
+              <img src="https://i.pinimg.com/1200x/05/fd/f7/05fdf7c5726c46f21e5185823ababd0d.jpg"
+                   class="card-img-top img-fluid hover-img position-absolute top-0 start-0 w-100 h-100"
+                   alt="Product 1 Hover" />
+            </div>
+            <div class="card-body">
+              <h5 style="color: white;">Classic Wear</h5>
+              <p style="color: white;">timeless, minimal frames in black, gold, or silver.</p>
+              <a href="index.html" class="btn btn-light" >Buy Now</a>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col"> <div class="card h-100 text-center m-2" style="background-color:#57301a;">
+            <div class="image-container position-relative">
+              <img src="https://i.pinimg.com/736x/66/86/23/668623f127c0f0420851f4815d85728c.jpg"
+                   class="card-img-top img-fluid main-img"
+                   alt="Product 1" />
+              <img src="Ray-Ban x Meta - Smart Glasses.jpg"
+                   class="card-img-top img-fluid hover-img position-absolute top-0 start-0 w-100 h-100"
+                   alt="Product 1 Hover" />
+            </div>
+            <div class="card-body">
+              <h5 style="color: white;">Lens Technology</h5>
+              <p style="color: white;">integrated AR or smart lenses (tech-inspired).</p>
+              <a href="index.html" class="btn btn-light">Buy Now</a>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col"> <div class="card h-100 text-center m-2" style="background-color:#57301a;">
+            <div class="image-container position-relative" >
+              <img src="https://i.pinimg.com/1200x/2d/0b/6e/2d0b6e142422a66e7ffedfe0a979e4d6.jpg"
+                   class="card-img-top img-fluid main-img"
+                   alt="Product 1" />
+              <img src="https://i.pinimg.com/1200x/66/32/c3/6632c3dcbccda3e04030dbc6ca41d9dc.jpg"
+                   class="card-img-top img-fluid hover-img position-absolute top-0 start-0 w-100 h-100"
+                   alt="Product 1 Hover" />
+            </div>
+            <div class="card-body">
+              <h5 style="color: white;">UV Glasses</h5>
+              <p style="color: white;">anti-glare and polarized lenses for driving..</p>
+              <a href="index.html" class="btn btn-light">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Counters -->
+    <section class="coun1 py-5 text-center">
+      <div class="container">
+        <div class="row g-4 justify-content-center">
+          <div class="col-10 col-sm-6 col-md-4">
+            <div class="card d-flex flex-column align-items-center justify-content-center p-4 h-100 c1">
+              <i class="fa-solid fa-user display-4 icon4"></i>
+              <div class="user mt-3"><h1>Users</h1><h4 id="user"></h4></div>
+            </div>
+          </div>
+
+          <div class="col-10 col-sm-6 col-md-4">
+            <div class="card d-flex flex-column align-items-center justify-content-center p-4 h-100 c1">
+              <i class="fa-solid fa-truck display-4 icon4"></i>
+              <div class="user mt-3"><h1>Delivered</h1><h4 id="projects"></h4></div>
+            </div>
+          </div>
+
+          <div class="col-10 col-sm-6 col-md-4">
+            <div class="card d-flex flex-column align-items-center justify-content-center p-4 h-100 c1">
+              <i class="fa-solid fa-glasses display-4 icon4"></i>
+              <div class="user mt-3"><h1>Production</h1><h4 id="spices"></h4></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- !Reviews! !Section! -->
+    <section class="container py-5">
+      <div class="row text-center">
+        <div class="col"><h3 class="mb-4">Customer Reviews</h3><p>Our Exclusive Customer Reviews  </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 d-flex align-items-stretch">
+          <div class="card testimonial-card w-100"><div class="card-up" style="background-color:#49240e;"></div>
+            <div class="avatar mx-auto bg-white"><img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" class="rounded-circle img-fluid" /></div>
+            <div class="card-body text-center"><h4>Maria Smantha</h4><hr /><p><i class="fas fa-quote-left pe-2"></i>“Absolutely love these! Super comfortable and stylish.”</p></div>
+          </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-stretch">
+          <div class="card testimonial-card w-100"><div class="card-up" style="background-color:#49240e;"></div>
+            <div class="avatar mx-auto bg-white"><img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp" class="rounded-circle img-fluid" /></div>
+            <div class="card-body text-center"><h4>Lisa Cudrow</h4><hr /><p><i class="fas fa-quote-left pe-2"></i>“These glasses give off major fashion vibes.”.</p></div>
+          </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-stretch">
+          <div class="card testimonial-card w-100"><div class="card-up" style="background-color:#49240e;"></div>
+            <div class="avatar mx-auto bg-white"><img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp" class="rounded-circle img-fluid" /></div>
+            <div class="card-body text-center"><h4>John Smith</h4><hr /><p><i class="fas fa-quote-left pe-2"></i>“Fit perfectly right out of the box.” <p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start">
+      <section class="p-4 border-bottom" style="background-color:#492a0e;"></section>
+      <section>
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+              <h6 class="fw-bold mb-4"><i class="fa-solid fa-gem me-2"></i>OpticBlend</h6>
+              <p>Optic Blend is where precision engineering meets visual artistry. We specialize in cutting-edge optical solutions that seamlessly merge form and function, delivering crystal-clear performance across various domains. Trust Optic Blend to enhance your vision, drive innovation, and bring your world into sharper focus.</p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mb-4">
+              <h6 class="fw-bold mb-4">Products</h6>
+              <p><a href="" class="text-reset">Sunglasses</a></p><p><a href="#!" class="text-reset">Frames</a></p><p><a href="#!" class="text-reset">Lenses</a></p><p><a href="#!" class="text-reset">Accessories</a></p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mb-4">
+              <h6 class="fw-bold mb-4">Navigation</h6>
+              <p><a href="eproject.html" class="text-reset">Contact Us</a></p><p><a href="workgalllery.html" class="text-reset">Gallery</a></p><p><a href="#!" class="text-reset">Eye Glasses</a></p><p><a href="aboutus.html" class="text-reset">About Us</a></p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mb-md-0 mb-4">
+              <h6 class="fw-bold mb-4">Contact</h6>
+              <p><i class="fa-solid fa-home me-2"></i> Aptech Garden</p><p><i class="fa-solid fa-envelope me-2"></i> OpticBlend@gmail.com</p><p><i class="fa-solid fa-phone me-2"></i> +92 0333255189</p><p><i class="fa-solid fa-print me-2"></i> +92 2188963270</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="text-center p-4 fw-bold" style="background-color:#e6d8c3; color:#492a0e">Designed By OpticBlend</div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let userCount = 1, projectCount = 1, spiceCount = 1;
+      let userInterval = setInterval(()=>{document.getElementById("user").innerHTML=userCount+++"+";if(userCount===800)clearInterval(userInterval)},20);
+      let projectInterval = setInterval(()=>{document.getElementById("projects").innerHTML=projectCount+++"+";if(projectCount===500)clearInterval(projectInterval)},25);
+      let spiceInterval = setInterval(()=>{document.getElementById("spices").innerHTML=spiceCount+++"+";if(spiceCount===1000)clearInterval(spiceInterval)},30);
+    </script>
+  </body>
+</html>

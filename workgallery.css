@@ -1,0 +1,199 @@
+/* --- Global Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #f0f0f0; 
+}
+
+/* FIX: Ensure Navbar stays visible and on top of the full-screen slider */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100; 
+}
+
+/* Container size is set to full viewport minus Navbar height */
+.container {
+    /* CRITICAL FIX: Changed from absolute to relative/margin-top so the footer renders below it */
+    position: relative; 
+    margin-top: 90px; 
+    left: 0;
+    right: 0;
+    height: calc(100vh - 90px); /* Full screen height minus navbar height */
+    background: beige;
+    box-shadow: 0 30px 50px gray;
+    overflow: hidden;
+}
+
+/* --- Slide Item Styling (User's Cover Flow Logic) --- */
+.container .slide .item {
+    /* ADJUSTED WIDTH: Increased from 200px to 250px */
+    width: 250px; 
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px gray;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+/* Full-width/height display for the main active items (1st and 2nd in DOM) */
+.slide .item:nth-child(1),
+.slide .item:nth-child(2) {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Cascading smaller items to the right - Offsets adjusted for 250px width + 20px gap = 270px */
+.slide .item:nth-child(3) {
+    left: 50%;
+}
+.slide .item:nth-child(4) {
+    left: calc(50% + 270px); /* Changed from 220px to 270px */
+}
+.slide .item:nth-child(5) {
+    left: calc(50% + 540px); /* Changed from 440px to 540px (270 * 2) */
+}
+.slide .item:nth-child(n + 6) {
+    left: calc(50% + 810px); /* Changed from 660px to 810px (270 * 3) */
+    opacity: 0;
+}
+
+/* --- Content Box Styling --- */
+.item .h1 {
+    position: absolute;
+    top: 50%;
+    /* Increased content width for better utilization */
+    left: 100px;
+    width: 400px; /* Increased from 300px to 400px */
+    text-align: left;
+    color: rgb(233, 232, 233);
+    transform: translate(0, -50%);
+    font-family: system-ui;
+    display: none; /* Hidden by default */
+}
+
+/* Only show content on the second item (which is the main active visible slide) */
+.slide .item:nth-child(2) .h1 {
+    display: block;
+}
+
+/* Content animations */
+.h1 .name {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+.h1 .des {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+@keyframes animate {
+    from {
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+/* --- Navigation Buttons --- */
+.button {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    z-index: 10; 
+}
+
+.button button {
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid black;
+    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    color: black;
+}
+
+.button button:hover {
+    background-color: beige;
+    color: black; 
+    border-color: black;
+}
+
+/* --- Footer Styles (Updated for darker look and better structure) --- */
+footer { 
+    width: 100%; 
+}
+/* Style for links inside the dark footer section */
+footer a { 
+    color: inherit; 
+    text-decoration: none; 
+    transition: color 0.3s;
+}
+footer a:hover { 
+    text-decoration: underline; 
+    color: white !important; /* Ensure links stand out on hover */
+}
+/* Highlight headings with a light line */
+footer h6 {
+    border-bottom: 2px solid #e6d8c3; /* Light beige border */
+    padding-bottom: 5px;
+    margin-bottom: 20px !important;
+}
+
+
+/* --- Media Query for Responsiveness --- */
+@media screen and (max-width: 768px) {
+    .container {
+        margin-top: 60px; /* Adjust margin for smaller screens */
+        height: calc(100vh - 60px);
+    }
+    
+    .item .h1 {
+        left: 30px; /* Move text slightly left */
+        width: 180px;
+    }
+    
+    /* Simplify cascade on small screens to prevent overlap issues */
+    .slide .item:nth-child(3) {
+        left: 65%;
+        width: 120px;
+    }
+    .slide .item:nth-child(4) {
+        left: calc(65% + 140px);
+    }
+    .slide .item:nth-child(5),
+    .slide .item:nth-child(n + 5) {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,234 @@
+* {box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #3a1506;
+  color: #333;
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: none;
+  background-color:#3a1506;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.about12{
+  margin-left: 1700px;
+  text-decoration: none;
+  border: #8b5e3f 2px solid;
+  color: #f5deb3;
+  border-radius: 5px;
+}
+
+ul li {
+  padding: 14px 20px;  
+}
+
+
+ul li.title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #f5deb3;
+  flex-basis: 100%;
+  text-align: center;
+}
+
+
+
+.banner-image {
+  background: url("https://i.pinimg.com/1200x/53/0d/40/530d40b7e17c970a6517c05b32b11dda.jpg") center/cover no-repeat;
+  height: 700px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text {
+  color: #f5deb3;
+  background-color: #3a1506;
+  padding: 20px 40px;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.service1 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 40px 0 20px 0;
+  background-color: #3a1506;
+  color: #f5deb3;
+}
+
+
+.flex-container1, .flex-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 40px;
+  padding: 20px;
+  color: #3a1506;
+}
+.flex-container3{
+   display: flex;
+   justify-content: space-between;
+     align-items: flex-start;
+      flex-wrap: wrap;
+       gap: 20px;
+}
+
+/* == TEAM INFO == */
+.supply1, .Memberboutus1 {
+  background-color: #f5deb3;
+  border-radius: 10px;
+  gap: 40px;
+  padding: 20px;
+  flex: 1 1 300px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  
+}
+.Memberaboutus2{
+  flex: 1; 
+  padding: 20px;
+  background-color: #f5deb3;
+  border-radius: 8px;
+  text-align: center;    
+  box-sizing: border-box;
+   
+}
+.supply2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    background-color: #f5deb3;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 300px;
+  text-align: center;
+  box-shadow: 0 2px 6px #3a1506;
+  
+  
+}
+
+
+.supply1,
+.supply2,
+.Memberaboutus1,
+.Memberaboutus2 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.supply1:hover,
+.supply2:hover,
+.Memberaboutus1:hover,
+.Memberaboutus2:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+footer { background-color: #e6d8c3; color: #492a0e; }
+      footer a { text-decoration: none; }
+      footer a:hover { text-decoration: underline; }
+
+
+.image, .image2 {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  max-width: 300px;
+  margin-bottom: 10px;
+}
+
+
+p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.boss {
+  font-weight: bold;
+ 
+  color: #4b2e1a;
+}
+
+
+footer {
+  background-color: #3a1506;
+  text-decoration: #f5deb3;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+ 
+@media (max-width: 992px) {
+  ul li.title {
+    font-size: 1.3rem;
+  }
+
+  .banner-text {
+    font-size: 1.6rem;
+    padding: 15px 30px;
+  }
+
+  .service1 {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul li {
+    padding: 10px;
+  }
+
+  .banner-image {
+    height: 200px;
+  }
+
+  .banner-text {
+    font-size: 1.3rem;
+    padding: 10px 20px;
+  }
+
+  .service1 {
+    font-size: 1.3rem;
+    margin: 20px 0 10px 0;
+  }
+
+  .flex-container1, .flex-container2, .flex-container3 {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .supply1, .supply2, .Memberaboutus1, .Memberaboutus2 {
+    flex: 1 1 100%;
+  }
+
+  .image, .image2 {
+    max-width: 100%;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+}
